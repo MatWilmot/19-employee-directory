@@ -11,26 +11,18 @@ function App() {
     return new Promise((resolve, reject) => {
       axios({
         method: "GET",
-        url: "https://randomuser.me/api/?results=20&nat=us",
+        url: "https://randomuser.me/api/?results=10&nat=us",
       })
         .then((response) => {
-          resolve(response.data.results);
+          resolve(setList(response.data.results));
+          console.log("from axios:", response.data.results);
         })
         .catch((error) => reject(error));
     });
   };
 
   useEffect(() => {
-    getEmployees().then((employees) => {
-      console.log("type: ", typeof employees);
-      console.log("data: ", employees);
-
-      employees.map((employee) => {
-        let tempList = list;
-        tempList.push(employee.name.first + " " + employee.name.last);
-        setList(tempList);
-      });
-    });
+    getEmployees();
   }, []);
 
   return (
