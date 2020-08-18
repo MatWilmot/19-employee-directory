@@ -7,14 +7,6 @@ const SideBar = (props) => {
       <br />
       <form>
         <h4>Sort:</h4>
-        {/* <div className="form-check">
-          <input name="fName-az" type="radio" className="form-check-input" />
-          <label htmlFor="fName-az">First Name (A-Z)</label>
-        </div>
-        <div className="form-check">
-          <input name="lName-az" type="radio" className="form-check-input" />
-          <label htmlFor="lName-az">Last Name (A-Z)</label>
-        </div> */}
 
         <fieldset className="form-group">
           <div className="row">

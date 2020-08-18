@@ -6,6 +6,8 @@ import axios from "axios";
 import DisplayContainer from "./components/DisplayContainer";
 import SideBar from "./components/SideBar";
 
+var originalList = [];
+
 function App() {
   const [list, setList] = useState([]);
 
@@ -17,7 +19,7 @@ function App() {
       })
         .then((response) => {
           resolve(setList(response.data.results));
-          console.log("from axios:", response.data.results);
+          resolve((originalList = response.data.results));
         })
         .catch((error) => reject(error));
     });
@@ -28,22 +30,44 @@ function App() {
   }, []);
 
   const sort = (e) => {
-    console.log(e.target.value);
-    const sorted = list.sort(function (a, b) {
-      if (a.name.first < b.name.first) {
-        return -1;
-      }
-      if (a.name.first > b.name.first) {
-        return 1;
-      }
-      return 0;
-    });
-    console.log("sorted:", sorted);
-    setList(sorted);
+    if (e.target.value === "fName") {
+      const sorted = list.sort(function (a, b) {
+        if (a.name.first < b.name.first) {
+          return -1;
+        }
+        if (a.name.first > b.name.first) {
+          return 1;
+        }
+        return 0;
+      });
+      console.log("sorted:", sorted);
+      setList([...sorted]);
+    } else {
+      const sorted = list.sort(function (a, b) {
+        if (a.name.last < b.name.last) {
+          return -1;
+        }
+        if (a.name.last > b.name.last) {
+          return 1;
+        }
+        return 0;
+      });
+      console.log("sorted:", sorted);
+      setList([...sorted]);
+    }
   };
 
   const filter = (e) => {
-    console.log(e.target.value);
+    // if (e.target.value != "Choose...") {
+    //   const filtered = list.filter(
+    //     (element) => element.location.state === e.target.value
+    //   );
+
+    //   setList([...filtered]);
+    // } else {
+    //   console.log(originalList);
+    // }
+    console.log("Original List:", originalList);
   };
 
   return (
