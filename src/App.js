@@ -3,6 +3,8 @@ import "./App.css";
 import Header from "./components/Header";
 import EmployeeDisplay from "./components/EmployeeDisplay";
 import axios from "axios";
+import DisplayContainer from "./components/DisplayContainer";
+import SideBar from "./components/SideBar";
 
 function App() {
   const [list, setList] = useState([]);
@@ -25,10 +27,25 @@ function App() {
     getEmployees();
   }, []);
 
+  const sort = () => {
+    console.log("Changed!");
+  };
+
+  const filter = (e) => {
+    console.log(e.target.value);
+  };
+
+  const search = (e) => {
+    console.log(e.target.value);
+  };
+
   return (
     <div className="App">
       <Header />
-      <EmployeeDisplay list={list} />
+      <DisplayContainer>
+        <SideBar sort={sort} filter={filter} search={search} />
+        <EmployeeDisplay list={list} />
+      </DisplayContainer>
     </div>
   );
 }

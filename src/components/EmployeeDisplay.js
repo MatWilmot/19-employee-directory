@@ -3,8 +3,8 @@ import React from "react";
 const EmployeeDisplay = (props) => {
   console.log("from EmployeeDisplay (props): ", props.list);
   return (
-    <div className="container">
-      <div className="row row-cols-md-3">
+    <div className="col-sm-9">
+      <div className="row row-cols-lg-2 row-cols-md-1">
         {props.list.map((element, index) => (
           <div key={index} className="col mb-4">
             <div className="card h-100" style={{ width: "22rem" }}>
@@ -17,8 +17,11 @@ const EmployeeDisplay = (props) => {
                 <h5 className="card-title">
                   {element.name.first + " " + element.name.last}
                 </h5>
-                <span className="card-text">Email: {element.email}</span>
+                <p className="card-text">Email: {element.email}</p>
                 <p className="card-text">Phone: {element.phone}</p>
+                <p className="card-text">
+                  From: {element.location.city}, {element.location.state}
+                </p>
               </div>
             </div>
           </div>
