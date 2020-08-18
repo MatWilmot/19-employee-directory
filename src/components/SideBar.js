@@ -25,7 +25,7 @@ const SideBar = (props) => {
                   type="radio"
                   name="gridRadios"
                   id="gridRadios1"
-                  value="option1"
+                  value="fName"
                   onChange={props.sort}
                 />
                 <label className="form-check-label" htmlFor="gridRadios1">
@@ -38,7 +38,7 @@ const SideBar = (props) => {
                   type="radio"
                   name="gridRadios"
                   id="gridRadios2"
-                  value="option2"
+                  value="lName"
                   onChange={props.sort}
                 />
                 <label className="form-check-label" htmlFor="gridRadios2">
@@ -111,7 +111,7 @@ const SideBar = (props) => {
             <option>Wyoming</option>
           </select>
         </div>
-        <br />
+        {/* <br />
         <h4>Search:</h4>
         <input
           type="text"
@@ -119,7 +119,7 @@ const SideBar = (props) => {
           id="search"
           placeholder="Type a first name"
           onChange={props.search}
-        />
+        /> */}
       </form>
     </div>
   );

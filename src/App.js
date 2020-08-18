@@ -27,15 +27,22 @@ function App() {
     getEmployees();
   }, []);
 
-  const sort = () => {
-    console.log("Changed!");
+  const sort = (e) => {
+    console.log(e.target.value);
+    const sorted = list.sort(function (a, b) {
+      if (a.name.first < b.name.first) {
+        return -1;
+      }
+      if (a.name.first > b.name.first) {
+        return 1;
+      }
+      return 0;
+    });
+    console.log("sorted:", sorted);
+    setList(sorted);
   };
 
   const filter = (e) => {
-    console.log(e.target.value);
-  };
-
-  const search = (e) => {
     console.log(e.target.value);
   };
 
@@ -43,7 +50,7 @@ function App() {
     <div className="App">
       <Header />
       <DisplayContainer>
-        <SideBar sort={sort} filter={filter} search={search} />
+        <SideBar sort={sort} filter={filter} />
         <EmployeeDisplay list={list} />
       </DisplayContainer>
     </div>
