@@ -17,7 +17,7 @@ const SideBar = (props) => {
                   type="radio"
                   name="gridRadios"
                   id="gridRadios1"
-                  value="fName"
+                  value="first"
                   onChange={props.sort}
                 />
                 <label className="form-check-label" htmlFor="gridRadios1">
@@ -30,7 +30,7 @@ const SideBar = (props) => {
                   type="radio"
                   name="gridRadios"
                   id="gridRadios2"
-                  value="lName"
+                  value="last"
                   onChange={props.sort}
                 />
                 <label className="form-check-label" htmlFor="gridRadios2">
