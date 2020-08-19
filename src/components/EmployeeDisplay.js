@@ -1,10 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 const EmployeeDisplay = (props) => {
-  // console.log("from EmployeeDisplay (props): ", props.list);
-  // useEffect(() => {
-  //   console.log("from useffect", props.list);
-  // });
   return (
     <div className="col-sm-9">
       <div className="row row-cols-lg-2 row-cols-md-1">
