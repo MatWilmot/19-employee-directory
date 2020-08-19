@@ -76,7 +76,7 @@ function App() {
   // running this function (by changing the "state" filter) shows the original array
   // this should never change the order in which the information is displayed
   const filter = (e) => {
-    if (e.target.value !== "Choose...") {
+    if (e.target.value !== "None") {
       const filtered = list.filter(
         (element) => element.location.state === e.target.value
       );

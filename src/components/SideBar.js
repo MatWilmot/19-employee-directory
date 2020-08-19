@@ -64,7 +64,7 @@ const SideBar = (props) => {
             className="form-control"
             onChange={props.filter}
           >
-            <option>Choose...</option>
+            <option>None</option>
             <option>Alabama</option>
             <option>Alaska</option>
             <option>Arizona</option>
