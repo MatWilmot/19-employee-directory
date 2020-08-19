@@ -37,6 +37,20 @@ const SideBar = (props) => {
                   Second Name (A-Z)
                 </label>
               </div>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios2"
+                  value="none"
+                  defaultChecked
+                  onChange={props.sort}
+                />
+                <label className="form-check-label" htmlFor="gridRadios2">
+                  None
+                </label>
+              </div>
             </div>
           </div>
         </fieldset>
