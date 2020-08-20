@@ -86,11 +86,33 @@ function App() {
     }
   };
 
+  const search = (e) => {
+    let searchResults = [];
+    [...list].map((element) => {
+      if (
+        element.name.first.includes(e.target.value) ||
+        element.name.last.includes(e.target.value) ||
+        element.location.city.includes(e.target.value) ||
+        element.location.state.includes(e.target.value) ||
+        element.email.includes(e.target.value) ||
+        element.phone.includes(e.target.value)
+      ) {
+        console.log("Matching Entry:", element);
+        searchResults.push(element);
+        console.log("Result Array", searchResults);
+        setModList([...searchResults]);
+      } else {
+        console.log("No Results Found!");
+        setModList([...searchResults]);
+      }
+    });
+  };
+
   return (
     <div className="App">
       <Header />
       <DisplayContainer>
-        <SideBar sort={sort} filter={filter} />
+        <SideBar sort={sort} filter={filter} search={search} />
         <EmployeeDisplay list={modList} />
       </DisplayContainer>
     </div>

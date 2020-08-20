@@ -2,7 +2,7 @@ import React from "react";
 
 const EmployeeDisplay = (props) => {
   return (
-    <div className="col-sm-9">
+    <div className="col-md-9">
       <div className="row row-cols-lg-2 row-cols-md-1">
         {props.list.map((element, index) => (
           <div key={index} className="col mb-4">

@@ -2,7 +2,7 @@ import React from "react";
 
 const SideBar = (props) => {
   return (
-    <div className="col-sm-3">
+    <div className="col-md-3">
       <h1>Options</h1>
       <br />
       <form>
@@ -117,15 +117,16 @@ const SideBar = (props) => {
             <option>Wyoming</option>
           </select>
         </div>
-        {/* <br />
+        <br />
         <h4>Search:</h4>
         <input
           type="text"
           className="form-control"
           id="search"
-          placeholder="Type a first name"
+          placeholder="Type something"
           onChange={props.search}
-        /> */}
+        />
+        <small className="form-text text-muted">Case Sensitive</small>
       </form>
     </div>
   );
